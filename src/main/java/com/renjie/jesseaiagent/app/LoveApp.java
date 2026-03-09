@@ -3,7 +3,9 @@ package com.renjie.jesseaiagent.app;
 import com.renjie.jesseaiagent.advisor.MyLoggerAdvisor;
 import com.renjie.jesseaiagent.advisor.ReReadingAdvisor;
 import com.renjie.jesseaiagent.chatmemory.FileBasedChatMemory;
+import com.renjie.jesseaiagent.rag.LoveAppRagCustomAdvisorFactory;
 import com.renjie.jesseaiagent.rag.LoveAppVectorStoreConfig;
+import com.renjie.jesseaiagent.rag.QueryRewriter;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.client.ChatClient;
@@ -15,6 +17,8 @@ import org.springframework.ai.chat.memory.InMemoryChatMemory;
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.chat.model.ChatResponse;
 import org.springframework.ai.vectorstore.VectorStore;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -32,6 +36,9 @@ public class LoveApp {
             "围绕单身、恋爱、已婚三种状态提问：单身状态询问社交圈拓展及追求心仪对象的困扰；" +
             "恋爱状态询问沟通、习惯差异引发的矛盾；已婚状态询问家庭责任与亲属关系处理的问题。" +
             "引导用户详述事情经过、对方反应及自身想法，以便给出专属解决方案。";
+    @Qualifier("loveAppVectorStore")
+    @Autowired
+    private VectorStore loveAppVectorStore;
 
     /**
      * 初始化chatClient
@@ -97,30 +104,42 @@ public class LoveApp {
     }
 
     //AI恋爱大师基于rag知识库回答
-    @Resource
+    @Resource(name = "loveAppVectorStore")
     private VectorStore vectorStore;
     @Resource
     private Advisor loveAppRagCloudAdvisor;
-
+    @Resource
+    private VectorStore pgVectorVectorStore;
+    @Resource
+    private QueryRewriter queryRewriter;
     public String doChatWithRag(String message, String chatId) {
+        // 查询重写
+        String rewrittenMessage = queryRewriter.doQueryRewrite(message);
         ChatResponse chatResponse = chatClient
                 .prompt()
-                .user(message)
+                //使用改写后的查询
+                .user(rewrittenMessage)
                 .advisors(spec -> spec.param(CHAT_MEMORY_CONVERSATION_ID_KEY, chatId)
                         .param(CHAT_MEMORY_RETRIEVE_SIZE_KEY, 10))
                 // 开启日志，便于观察效果
                 .advisors(new MyLoggerAdvisor())
-                // 应用本地知识库
-                // .advisors(new QuestionAnswerAdvisor(vectorStore))
-                // 应用增强检索服务（云知识库服务）
-                .advisors(loveAppRagCloudAdvisor)
+                // 应用RAG本地知识库
+                .advisors(new QuestionAnswerAdvisor(loveAppVectorStore))
+                // 应用RAG增强检索服务（云知识库服务）
+                //.advisors(loveAppRagCloudAdvisor)
+                // 应用RAG基于pgVector向量数据库
+                //.advisors(new QuestionAnswerAdvisor(pgVectorVectorStore))
+                //应用自定义RAG检索增强服务（文档查询器＋上下文增强器）
+//                .advisors(LoveAppRagCustomAdvisorFactory.createLoveAppRagCustomAdvisor(
+//                                loveAppVectorStore, "单身"
+//                        )
+//                )
                 .call()
                 .chatResponse();
         String content = chatResponse.getResult().getOutput().getText();
         log.info("content: {}", content);
         return content;
     }
-
 
 
 
