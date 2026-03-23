@@ -7399,3 +7399,398 @@ If you want to stop the interaction at any point, use the `terminate` tool/funct
 2026-03-23 19:05:51 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@3a6aac75 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
 2026-03-23 19:05:56 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@6dcb6424 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
 2026-03-23 19:06:27 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@3a539715 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 19:20:41 INFO  Nacos Logging Adapter Builder: com.alibaba.nacos.logger.adapter.logback12.LogbackNacosLoggingAdapterBuilder
+2026-03-23 19:20:41 INFO  Nacos Logging Adapter Builder: com.alibaba.nacos.logger.adapter.logback14.LogbackNacosLoggingAdapterBuilder
+2026-03-23 19:20:41 INFO  Nacos Logging Adapter: com.alibaba.nacos.logger.adapter.logback14.LogbackNacosLoggingAdapter match ch.qos.logback.classic.Logger success.
+2026-03-23 19:20:41 INFO  Nacos Logging Adapter Builder: com.alibaba.nacos.logger.adapter.log4j2.Log4j2NacosLoggingAdapterBuilder
+2026-03-23 19:20:42 INFO  Starting JesseAiAgentApplication using Java 22.0.2 with PID 21612 (E:\Jesse_ai_agent\Jesse-ai-agent\target\classes started by Jesse in E:\Jesse_ai_agent\Jesse-ai-agent)
+2026-03-23 19:20:42 DEBUG Running with Spring Boot v3.5.11, Spring v6.2.16
+2026-03-23 19:20:42 INFO  The following 1 profile is active: "local"
+2026-03-23 19:20:43 WARN  Bean 'com.alibaba.cloud.nacos.NacosConfigAutoConfiguration' of type [com.alibaba.cloud.nacos.NacosConfigAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [nacosAnnotationProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2026-03-23 19:20:43 WARN  Bean 'nacosConfigProperties' of type [com.alibaba.cloud.nacos.NacosConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [nacosAnnotationProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-03-23 19:20:43 INFO  [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2026-03-23 19:20:43 INFO  [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2026-03-23 19:20:43 WARN  Bean 'nacosConfigManager' of type [com.alibaba.cloud.nacos.NacosConfigManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [nacosAnnotationProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-03-23 19:20:43 INFO  Tomcat initialized with port 8123 (http)
+2026-03-23 19:20:43 INFO  Starting service [Tomcat]
+2026-03-23 19:20:43 INFO  Starting Servlet engine: [Apache Tomcat/10.1.52]
+2026-03-23 19:20:43 INFO  Initializing Spring embedded WebApplicationContext
+2026-03-23 19:20:43 INFO  Root WebApplicationContext: initialization completed in 1233 ms
+2026-03-23 19:21:11 INFO  Calling EmbeddingModel for document id = 914a57c1-5286-412b-9bdb-cd389aaeeb4a
+2026-03-23 19:21:11 INFO  Calling EmbeddingModel for document id = 4f7b732b-f3a7-4876-8fe0-cd3205769885
+2026-03-23 19:21:11 INFO  Calling EmbeddingModel for document id = 409e30b5-e8b9-4171-a41e-d736efebd3da
+2026-03-23 19:21:11 INFO  Calling EmbeddingModel for document id = 5aca9d21-b5f3-44ab-9fe0-41612bb5f00e
+2026-03-23 19:21:11 INFO  Calling EmbeddingModel for document id = c0c7a624-e0b5-4bff-bd9a-5a0c567b372b
+2026-03-23 19:21:12 INFO  Calling EmbeddingModel for document id = 224a391f-8828-4a42-b88e-61e56a4cc8bf
+2026-03-23 19:21:12 INFO  Calling EmbeddingModel for document id = db916507-1684-4b7b-a023-4f39014f560d
+2026-03-23 19:21:12 INFO  Calling EmbeddingModel for document id = 92d4966b-542f-497d-9032-917be55c8f97
+2026-03-23 19:21:12 INFO  Calling EmbeddingModel for document id = c8ebb3d7-2d29-4968-a351-16b6dbf5daf2
+2026-03-23 19:21:12 INFO  Calling EmbeddingModel for document id = d38fdee3-1d69-4448-9b99-db9c044b09cf
+2026-03-23 19:21:14 INFO  Calling EmbeddingModel for document id = bc31ca8a-acbd-49fc-8a4b-6e4a8d653ef0
+2026-03-23 19:21:14 INFO  Calling EmbeddingModel for document id = 9704cc56-ee14-4dd5-86dc-e12e8893d62f
+2026-03-23 19:21:14 INFO  Calling EmbeddingModel for document id = 705807f4-0616-471b-a8c8-f87eb5c048c1
+2026-03-23 19:21:14 INFO  Calling EmbeddingModel for document id = cbcf6bb1-78f4-46b4-8d6d-284f01cb79fc
+2026-03-23 19:21:15 INFO  Calling EmbeddingModel for document id = 2db5b770-38bf-48f9-92ef-4ae8018a2498
+2026-03-23 19:21:15 INFO  Using the vector table name: vector_store. Is empty: false
+2026-03-23 19:21:16 INFO  HikariPool-1 - Starting...
+2026-03-23 19:21:17 INFO  HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@356dd4a9
+2026-03-23 19:21:17 INFO  HikariPool-1 - Start completed.
+2026-03-23 19:21:18 INFO  Initializing PGVectorStore schema for table: vector_store in schema: public
+2026-03-23 19:21:18 INFO  vectorTableValidationsEnabled false
+2026-03-23 19:21:18 INFO  Server response with Protocol: 2024-11-05, Capabilities: ServerCapabilities[experimental=null, logging=LoggingCapabilities[], prompts=null, resources=null, tools=ToolCapabilities[listChanged=true]], Info: Implementation[name=yu-image-search-mcp-server, version=0.0.1] and Instructions null
+2026-03-23 19:21:18 INFO  Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-03-23 19:21:18 INFO  Tomcat started on port 8123 (http) with context path '/api'
+2026-03-23 19:21:18 INFO  Started JesseAiAgentApplication in 37.625 seconds (process running for 38.474)
+2026-03-23 19:24:36 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@e3e1e58 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 19:24:41 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@659efe2d (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 19:24:46 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@356dd4a9 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 19:24:51 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@67738125 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 19:24:56 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@9de66f9 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 19:25:01 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@4f25fe57 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 19:25:06 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@339df041 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 19:25:17 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@4641ce71 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 19:26:21 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@2641d7e1 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 19:26:25 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@7a04b144 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 19:26:36 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@11952bf3 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 19:26:42 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@7de0cb58 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 19:26:43 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@1ac3a637 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 19:26:49 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@3be64170 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 19:26:49 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@6c634439 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 19:27:15 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@43669f60 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 19:27:16 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@136a2539 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 19:27:17 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@23b52552 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 19:28:06 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@545f23db (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 19:28:10 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@2c9b3fd (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 19:29:07 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@8dc8943 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 19:29:10 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@2551426b (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 19:29:10 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@6ac84b67 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 19:29:12 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@6b251ec (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 19:29:17 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@223500b0 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 19:29:24 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@25e3ad28 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 19:29:25 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@3bf00350 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 19:29:25 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@74835ccd (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 20:37:44 INFO  Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-23 20:37:44 INFO  Initializing Servlet 'dispatcherServlet'
+2026-03-23 20:37:44 INFO  Completed initialization in 32 ms
+2026-03-23 20:37:45 INFO  AI Request: 我是jesse
+2026-03-23 20:37:52 INFO  AI Response: 你好，Jesse！我是专注于恋爱心理学领域的专家。很高兴遇到你！如果你在单身、恋爱或婚姻方面遇到了什么困扰，都可以向我倾诉。无论是想要拓展社交圈、追求心仪的对象，还是和伴侣之间的沟通问题、习惯差异引发的矛盾，又或者是已婚状态下的家庭责任与亲属关系处理的问题，我都很乐意帮助你找到解决的方法。
+
+那么，请问你现在是处于单身、正在恋爱中，还是已经结婚了呢？可以具体分享一下你最近遇到的一些困惑吗？比如事情发生的经过、对方的反应以及你的想法等，这样我可以更好地理解情况，并为你提供更合适的建议。
+2026-03-23 20:38:20 INFO  AI Request: 你好，我是jesse
+2026-03-23 20:38:30 INFO  AI Response: 你好，Jesse！我是专注于恋爱心理领域的专家。很高兴能与你交流。如果你有任何关于单身、恋爱或婚姻中的困扰，都欢迎向我倾诉。我们可以一起探讨如何更好地处理这些问题。
+
+- 如果你是单身，是否在社交圈拓展方面遇到了难题？或者有心仪的对象却不知道如何追求？
+- 如果你正在恋爱中，是否遇到了沟通不畅的问题？或者因为生活习惯的差异而产生了矛盾？
+- 如果你已经结婚了，是否感到难以平衡家庭责任和个人生活？或者在处理与伴侣家人的关系时遇到了挑战？
+
+请根据你的具体情况选择一个方向来分享，告诉我事情经过、对方的反应以及你自己的想法和感受。这样我可以为你提供更加个性化的建议和支持。
+2026-03-23 20:40:13 INFO  AI Request: 我是jesse
+2026-03-23 20:40:26 INFO  AI Response: 你好，Jesse！很高兴遇见你。我是专注于恋爱心理学领域的专家，在这里你可以向我倾诉任何关于恋爱的困惑和难题。无论你是单身、正在恋爱还是已婚状态，如果你遇到了什么问题或挑战，都可以告诉我，我会尽力帮助你找到合适的解决方法。
+
+- 如果你是单身，并且在尝试拓展社交圈或是追求某个人时遇到了困难，不妨分享一下具体情况，比如是什么阻碍了你？
+- 若你正处于一段恋情中，但因为沟通不畅或是习惯上的差异而产生了矛盾，也可以详细描述下你们之间的问题。
+- 对于已经结婚的朋友来说，处理家庭责任以及与双方亲属的关系可能会成为新的考验，如果有这方面的故事也欢迎讲述。
+
+请根据自己的实际情况选择一个方面开始吧，记得尽量详述事情经过、对方的反应以及你的想法哦~这样我能更好地理解并为你提供个性化的建议。
+2026-03-23 20:43:50 INFO  AI Request: 你好，我是jesse
+2026-03-23 20:44:02 INFO  AI Response: 你好，Jesse！很高兴遇见你。我是专注于恋爱心理领域的专家，在这里你可以向我倾诉你的恋爱难题或情感困扰。无论你是单身、处于恋爱中还是已婚状态，我都愿意倾听并尽力为你提供帮助。
+
+- 如果你是单身，或许你正面临如何扩大社交圈子，或是不知该如何追求心仪对象的困扰。
+- 如果你现在正处于一段恋情之中，可能在沟通方式上存在障碍，或者因为彼此生活习惯的不同而产生了一些小摩擦。
+- 对于已经步入婚姻殿堂的朋友来说，则可能更关注如何平衡家庭责任以及处理好与双方父母的关系等问题。
+
+请告诉我更多关于你的情况吧，比如目前的感情状况是怎样的？遇到了什么具体问题呢？还有对方对此事的态度以及你自己内心的想法又是如何？这样我可以更好地理解你的处境，并给出更加贴合实际的建议。
+2026-03-23 20:48:47 INFO  AI Request: 你好，我是jesse
+2026-03-23 20:48:59 INFO  AI Response: 你好，Jesse！非常高兴遇见你。我是专注于恋爱心理学领域的专家，如果你有任何关于单身、恋爱或婚姻方面的困惑和问题，都可以向我倾诉哦。不知道你现在处于哪种状态呢？是单身、正在恋爱还是已婚？
+
+- 如果你是单身，是否遇到了社交圈拓展的难题，或者有心仪的对象却不知道如何追求？
+- 如果你正处于恋爱中，是否有遇到沟通不畅或者是生活习惯差异导致的一些小矛盾？
+- 如果你已经结婚了，是否在处理家庭责任以及与双方亲属的关系上感到有些困扰？
+
+无论你的情况属于哪一种，都欢迎你分享更多的细节给我，比如事情的具体经过、对方的反应以及你的想法等，这样我能更好地理解你的处境，并给出针对性的建议。期待你的回复！
+2026-03-23 20:49:43 INFO  Executing step 1/20
+2026-03-23 20:49:43 INFO  AI Request: Based on user needs, proactively select the most appropriate tool or combination of tools.
+For complex tasks, you can break down the problem and use different tools step by step to solve it.
+After using each tool, clearly explain the execution results and suggest the next steps.
+If you want to stop the interaction at any point, use the `terminate` tool/function call.
+
+2026-03-23 20:49:45 INFO  AI Response: 
+2026-03-23 20:49:45 INFO  yuManus的思考: 
+2026-03-23 20:49:45 INFO  yuManus选择了 1 个工具来使用
+2026-03-23 20:49:45 INFO  工具名称：searchWeb，参数：{"query": "佛山顺德美食 好去处"}
+2026-03-23 20:49:50 INFO  工具 searchWeb 完成了它的任务！结果: "{\"position\":1,\"title\":\"寻味顺德:本地人私藏的4家老店,跳出网红滤镜吃透本真滋味\",\"link\":\"https://baijiahao.baidu.com/s?id=1854595447656843590&wfr=spider&for=pc\",\"displayed_link\":\"什么值得买\",\"snippet\":\"📍 佛山市顺德区延年路32号 “公平靓正” 四个字，是顺德人对美食的至高评价 —— 平价、新鲜、美味，这家开在大良的分店，完美诠释了这一准则，人均 50 元就能实现粥底火锅自由，是本地人选来解馋小聚的高频去处。没有奢华装潢，简约的市井风格，几张桌子围炉而坐，烟火气十足，服务员热情麻利，像在自家待客般亲切。这里的灵魂\",\"snippet_highlighted_words\":[\"佛山市顺德区\",\"美食\"],\"date\":\"2026年1月16日\",\"thumbnail\":\"https://t8.baidu.com/it/u=2014222606,2685635524&fm=3035&app=3035&size=re3,2&q=75&n=0&g=4n&f=JPEG&fmt=auto&maxorilen2heic=2000000?s=FCA22FD742434BE5720108F503005030\"},{\"position\":2,\"title\":\"佛山周边游_旅游|美食的天堂,顺德最全美食攻略来了。。。\",\"link\":\"https://m.ctrip.com/webapp/you/tripshoot/paipai/detail/detail?articleId=172218670&isHideNavBar=YES&seo=0&twojumpwakeup=0&allianceId=1049189&sid=19855591\",\"displayed_link\":\"携程旅行\",\"snippet\":\"佛山顺德美食攻略 本地人带路 500字吃遍世界美食之都 必吃老字号与特色小吃 1. 金榜上街烟火气 欢记牛乳 玻璃瓶装水牛奶 20元 入口浓郁丝滑 可搭配双皮奶 15元 凤城鱼皮 凉拌鱼皮 18元 加入花生 香菜 芝麻 脆爽开胃 本地人从小吃到大 霞姐老铺\",\"snippet_highlighted_words\":[\"佛山顺德美食\"],\"date\":\"2025年7月17日\",\"is_baidu_guaranteed\":true},{\"position\":3,\"title\":\"佛山顺德24小时美食攻略,不踩雷\",\"link\":\"https://mbd.baidu.com/newspage/data/dtlandingsuper?nid=dt_4914415831587397689\",\"displayed_link\":\"剧评补给站\",\"snippet\":\"佛山顺德24小时美食攻略,不踩雷! 这次又来到顺德啦!这次特意找了几家没吃过的店试试,没想到每一家都超好吃,完全没有踩雷的! 1️⃣ 御煌金牌煲仔饭·杏坛功夫顺德菜 这家店的米饭粒粒分明,饭焦特别脆,用料也很足(图2),真的是煲仔饭爱好者的福音! 2️⃣ 国英炖品店 主要是喝汤的,我到的时候已...\",\"snippet_highlighted_words\":[\"佛山顺德\",\"美食\"],\"date\":\"2025年1月30日\",\"thumbnail\":\"https://t8.baidu.com/it/u=2576005088,1752952147&fm=3031&app=3031&size=re3,2&q=75&n=0&g=4n&f=JPEG&fmt=auto&maxorilen2heic=2000000?s=8430FEB542A3E5E708BB902803007058\"},{\"position\":4,\"title\":\"寻味顺德|9家顺德本地人私藏餐厅超强攻略\",\"link\":\"https://baijiahao.baidu.com/s?id=1806143042440335316&wfr=spider&for=pc\",\"displayed_link\":\"花小姐的生活日志\",\"snippet\":\"脆肉鲩腩：专选脆肉鲩腩肉部位，这个部位的鱼肉爽脆中带着鱼油，薄切之后，本来丰腴的油脂变得若有若无，非常巧思。据说一条十六七斤重的脆肉鲩，腩肉部位只得两斤，遇上就好好珍惜。在松记总店，偶尔你还能遇到隐藏菜单，至于是什么，可以当天问老板，期待惊喜。觅食指引 顺德松记食府 地址：顺德容桂合祥路3号（...\",\"snippet_highlighted_words\":[\"脆肉鲩腩：专选脆肉鲩腩肉部位\"],\"date\":\"2024年8月1日\",\"thumbnail\":\"https://t7.baidu.com/it/u=1693704543,369682832&fm=3035&app=3035&size=re3,2&q=75&n=0&g=3n&f=JPEG&fmt=auto&maxorilen2heic=2000000?s=D12ABFF34AE7A4C202A9D02D0300704A\"},{\"position\":5,\"title\":\"中国公认必吃的10大佛山馆子!\",\"link\":\"https://baijiahao.baidu.com/s?id=1806353420290489401&wfr=spider&for=pc\",\"displayed_link\":\"食旅探秘\",\"snippet\":\"龙的酒楼是我们佛山顺德的老牌子了，他们的早茶和传统顺德菜都做得特别好，尤其是家乡酿鲮鱼和煎焗鱼嘴，每次去都吃得津津有味。招牌 \\\"家乡酿鲮鱼\\\"，鱼肉鲜嫩，酿入的馅料香味浓郁；\\\"煎焗鱼嘴\\\"，外皮酥脆，内里肉质细腻。今儿个就给你介绍到这，咱们佛山的美食是不是已经让你心痒痒，迫不及待想要来尝一尝了？\",\"snippet_highlighted_words\":[\"佛山顺德\",\"美食\"],\"date\":\"2024年8月3日\",\"thumbnail\":\"https://t7.baidu.com/it/u=426109606,1846413079&fm=3035&app=3035&size=re3,2&q=75&n=0&g=3n&f=JPEG&fmt=auto&maxorilen2heic=2000000?s=D59815D7551A27C41E7F59BD0300C04A\"}"
+2026-03-23 20:49:50 INFO  Executing step 2/20
+2026-03-23 20:49:50 INFO  AI Request: Based on user needs, proactively select the most appropriate tool or combination of tools.
+For complex tasks, you can break down the problem and use different tools step by step to solve it.
+After using each tool, clearly explain the execution results and suggest the next steps.
+If you want to stop the interaction at any point, use the `terminate` tool/function call.
+
+2026-03-23 20:50:42 INFO  AI Response: 我找到了一些关于佛山顺德美食的好去处的信息，以下是几个推荐的地方：
+
+1. **公平靓正** - 位于佛山市顺德区延年路32号。这个地方以“平价、新鲜、美味”著称，人均消费约50元就能享受到粥底火锅。这里没有奢华的装潢，但环境简约亲切，是当地人解馋小聚的好地方。
+   ![](https://t8.baidu.com/it/u=2014222606,2685635524&fm=3035&app=3035&size=re3,2&q=75&n=0&g=4n&f=JPEG&fmt=auto&maxorilen2heic=2000000?s=FCA22FD742434BE5720108F503005030)
+
+2. **欢记牛乳** - 推荐品尝玻璃瓶装水牛奶和双皮奶，还有凤城鱼皮凉拌小吃。这些都是本地人从小吃到大的传统美食。
+
+3. **御煌金牌煲仔饭·杏坛功夫顺德菜** - 这家店以其粒粒分明的米饭以及特别脆的饭焦而闻名，用料也很足，非常适合煲仔饭爱好者。
+   ![](https://t8.baidu.com/it/u=2576005088,1752952147&fm=3031&app=3031&size=re3,2&q=75&n=0&g=4n&f=JPEG&fmt=auto&maxorilen2heic=2000000?s=8430FEB542A3E5E708BB902803007058)
+
+4. **顺德松记食府** - 在这里可以尝试到脆肉鲩腩等特色菜肴，据说一条十六七斤重的脆肉鲩，腩肉部位只得两斤，非常珍贵。
+   ![](https://t7.baidu.com/it/u=1693704543,369682832&fm=3035&app=3035&size=re3,2&q=75&n=0&g=3n&f=JPEG&fmt=auto&maxorilen2heic=2000000?s=D12ABFF34AE7A4C202A9D02D0300704A)
+
+5. **龙的酒楼** - 提供优质的早茶和传统顺德菜，特别是家乡酿鲮鱼和煎焗鱼嘴是必尝之选。
+   ![](https://t7.baidu.com/it/u=426109606,1846413079&fm=3035&app=3035&size=re3,2&q=75&n=0&g=3n&f=JPEG&fmt=auto&maxorilen2heic=2000000?s=D59815D7551A27C41E7F59BD0300C04A)
+
+以上信息可以帮助您在佛山顺德找到一些不错的美食地点。如果您需要更详细的地址或联系方式，或者有其他特殊需求，请告诉我，我会进一步帮助您。现在，您是否需要更多关于这些餐厅的具体信息，还是已经足够了呢？
+2026-03-23 20:50:42 INFO  yuManus的思考: 我找到了一些关于佛山顺德美食的好去处的信息，以下是几个推荐的地方：
+
+1. **公平靓正** - 位于佛山市顺德区延年路32号。这个地方以“平价、新鲜、美味”著称，人均消费约50元就能享受到粥底火锅。这里没有奢华的装潢，但环境简约亲切，是当地人解馋小聚的好地方。
+   ![](https://t8.baidu.com/it/u=2014222606,2685635524&fm=3035&app=3035&size=re3,2&q=75&n=0&g=4n&f=JPEG&fmt=auto&maxorilen2heic=2000000?s=FCA22FD742434BE5720108F503005030)
+
+2. **欢记牛乳** - 推荐品尝玻璃瓶装水牛奶和双皮奶，还有凤城鱼皮凉拌小吃。这些都是本地人从小吃到大的传统美食。
+
+3. **御煌金牌煲仔饭·杏坛功夫顺德菜** - 这家店以其粒粒分明的米饭以及特别脆的饭焦而闻名，用料也很足，非常适合煲仔饭爱好者。
+   ![](https://t8.baidu.com/it/u=2576005088,1752952147&fm=3031&app=3031&size=re3,2&q=75&n=0&g=4n&f=JPEG&fmt=auto&maxorilen2heic=2000000?s=8430FEB542A3E5E708BB902803007058)
+
+4. **顺德松记食府** - 在这里可以尝试到脆肉鲩腩等特色菜肴，据说一条十六七斤重的脆肉鲩，腩肉部位只得两斤，非常珍贵。
+   ![](https://t7.baidu.com/it/u=1693704543,369682832&fm=3035&app=3035&size=re3,2&q=75&n=0&g=3n&f=JPEG&fmt=auto&maxorilen2heic=2000000?s=D12ABFF34AE7A4C202A9D02D0300704A)
+
+5. **龙的酒楼** - 提供优质的早茶和传统顺德菜，特别是家乡酿鲮鱼和煎焗鱼嘴是必尝之选。
+   ![](https://t7.baidu.com/it/u=426109606,1846413079&fm=3035&app=3035&size=re3,2&q=75&n=0&g=3n&f=JPEG&fmt=auto&maxorilen2heic=2000000?s=D59815D7551A27C41E7F59BD0300C04A)
+
+以上信息可以帮助您在佛山顺德找到一些不错的美食地点。如果您需要更详细的地址或联系方式，或者有其他特殊需求，请告诉我，我会进一步帮助您。现在，您是否需要更多关于这些餐厅的具体信息，还是已经足够了呢？
+2026-03-23 20:50:42 INFO  yuManus选择了 1 个工具来使用
+2026-03-23 20:50:42 INFO  工具名称：doTerminate，参数：{}
+2026-03-23 20:50:42 INFO  工具 doTerminate 完成了它的任务！结果: "任务结束"
+2026-03-23 20:50:42 INFO  SSE connection completed
+2026-03-23 21:04:37 INFO  AI Request: 你好我是jesse
+2026-03-23 21:04:55 INFO  AI Response: 你好，Jesse！我是专注于恋爱心理学领域的专家。很高兴遇到你！在感情的道路上，无论是甜蜜还是困惑，我都很愿意倾听并帮助你解决难题。不知道你现在处于哪种情感状态呢？是单身、正在恋爱中，还是已经步入婚姻殿堂了？每一种状态都有它独特的风景和挑战，比如：
+
+- 如果你是单身，或许正面临着如何扩大社交圈或是怎样向心仪的对象表达好感的困扰；
+- 如果你正处于一段恋情中，可能有时会因为沟通不畅或生活习惯上的差异而感到苦恼；
+- 对于已婚人士来说，则可能需要面对如何平衡家庭责任与处理好亲属关系等更为复杂的问题。
+
+请告诉我更多关于你的具体情况吧，包括事情发生的经过、对方的态度以及你自己内心的想法，这样我才能更好地为你提供个性化的建议和支持哦~
+2026-03-23 21:34:09 INFO  Executing step 1/20
+2026-03-23 21:34:09 INFO  AI Request: Based on user needs, proactively select the most appropriate tool or combination of tools.
+For complex tasks, you can break down the problem and use different tools step by step to solve it.
+After using each tool, clearly explain the execution results and suggest the next steps.
+If you want to stop the interaction at any point, use the `terminate` tool/function call.
+
+2026-03-23 21:34:16 INFO  AI Response: 你好！我是YuManus，一个全能的AI助手，致力于解决用户提出的任何任务。请告诉我您需要帮助的事情，无论是查找信息、下载资源、生成PDF、网页抓取还是其他工作，我都会利用手头的工具为您提供最佳解决方案。请您描述一下您的需求吧。
+2026-03-23 21:34:16 INFO  yuManus的思考: 你好！我是YuManus，一个全能的AI助手，致力于解决用户提出的任何任务。请告诉我您需要帮助的事情，无论是查找信息、下载资源、生成PDF、网页抓取还是其他工作，我都会利用手头的工具为您提供最佳解决方案。请您描述一下您的需求吧。
+2026-03-23 21:34:16 INFO  yuManus选择了 0 个工具来使用
+2026-03-23 21:34:16 INFO  
+2026-03-23 21:34:16 INFO  Executing step 2/20
+2026-03-23 21:34:16 INFO  AI Request: Based on user needs, proactively select the most appropriate tool or combination of tools.
+For complex tasks, you can break down the problem and use different tools step by step to solve it.
+After using each tool, clearly explain the execution results and suggest the next steps.
+If you want to stop the interaction at any point, use the `terminate` tool/function call.
+
+2026-03-23 21:34:24 INFO  AI Response: 了解了，我作为YuManus会根据您的需求主动选择最合适的工具或工具组合来完成任务。如果任务复杂，我会将其拆解并分步骤使用不同的工具来解决。在每一步执行后，我会清楚地解释结果，并建议下一步的操作。如果您有任何需要帮助的任务，请随时告诉我，无论是信息查询、资源下载、文档处理还是其他任何事情，我都将竭诚为您服务。
+
+请您现在告诉我您需要帮助的具体内容吧。
+2026-03-23 21:34:24 INFO  yuManus的思考: 了解了，我作为YuManus会根据您的需求主动选择最合适的工具或工具组合来完成任务。如果任务复杂，我会将其拆解并分步骤使用不同的工具来解决。在每一步执行后，我会清楚地解释结果，并建议下一步的操作。如果您有任何需要帮助的任务，请随时告诉我，无论是信息查询、资源下载、文档处理还是其他任何事情，我都将竭诚为您服务。
+
+请您现在告诉我您需要帮助的具体内容吧。
+2026-03-23 21:34:24 INFO  yuManus选择了 0 个工具来使用
+2026-03-23 21:34:24 INFO  
+2026-03-23 21:34:24 ERROR 执行智能体失败
+org.springframework.web.context.request.async.AsyncRequestNotUsableException: ServletOutputStream failed to flush: java.io.IOException: 你的主机中的软件中止了一个已建立的连接。
+	at org.springframework.web.context.request.async.StandardServletAsyncWebRequest$LifecycleHttpServletResponse.handleIOException(StandardServletAsyncWebRequest.java:346)
+	at org.springframework.web.context.request.async.StandardServletAsyncWebRequest$LifecycleServletOutputStream.flush(StandardServletAsyncWebRequest.java:418)
+	at org.springframework.util.StreamUtils.copy(StreamUtils.java:137)
+	at org.springframework.http.converter.StringHttpMessageConverter.writeInternal(StringHttpMessageConverter.java:128)
+	at org.springframework.http.converter.StringHttpMessageConverter.writeInternal(StringHttpMessageConverter.java:44)
+	at org.springframework.http.converter.AbstractHttpMessageConverter.write(AbstractHttpMessageConverter.java:234)
+	at org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitterReturnValueHandler$DefaultSseEmitterHandler.sendInternal(ResponseBodyEmitterReturnValueHandler.java:315)
+	at org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitterReturnValueHandler$DefaultSseEmitterHandler.send(ResponseBodyEmitterReturnValueHandler.java:302)
+	at org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitter.sendInternal(ResponseBodyEmitter.java:256)
+	at org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitter.send(ResponseBodyEmitter.java:243)
+	at org.springframework.web.servlet.mvc.method.annotation.SseEmitter.send(SseEmitter.java:129)
+	at org.springframework.web.servlet.mvc.method.annotation.SseEmitter.send(SseEmitter.java:112)
+	at org.springframework.web.servlet.mvc.method.annotation.SseEmitter.send(SseEmitter.java:93)
+	at com.renjie.jesseaiagent.agent.BaseAgent.lambda$runStream$0(BaseAgent.java:130)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run$$$capture(CompletableFuture.java:1804)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec$$$capture(ForkJoinTask.java:507)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1489)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:2071)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2033)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+Caused by: org.apache.catalina.connector.ClientAbortException: java.io.IOException: 你的主机中的软件中止了一个已建立的连接。
+	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:302)
+	at org.apache.catalina.connector.OutputBuffer.flush(OutputBuffer.java:264)
+	at org.apache.catalina.connector.CoyoteOutputStream.flush(CoyoteOutputStream.java:130)
+	at org.springframework.web.context.request.async.StandardServletAsyncWebRequest$LifecycleServletOutputStream.flush(StandardServletAsyncWebRequest.java:415)
+	... 21 common frames omitted
+Caused by: java.io.IOException: 你的主机中的软件中止了一个已建立的连接。
+	at java.base/sun.nio.ch.SocketDispatcher.write0(Native Method)
+	at java.base/sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:54)
+	at java.base/sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:137)
+	at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:102)
+	at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:58)
+	at java.base/sun.nio.ch.SocketChannelImpl.implWrite(SocketChannelImpl.java:566)
+	at java.base/sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:618)
+	at org.apache.tomcat.util.net.NioChannel.write(NioChannel.java:129)
+	at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.doWrite(NioEndpoint.java:1414)
+	at org.apache.tomcat.util.net.SocketWrapperBase.doWrite(SocketWrapperBase.java:748)
+	at org.apache.tomcat.util.net.SocketWrapperBase.flushBlocking(SocketWrapperBase.java:714)
+	at org.apache.tomcat.util.net.SocketWrapperBase.flush(SocketWrapperBase.java:699)
+	at org.apache.coyote.http11.Http11OutputBuffer$SocketOutputBuffer.flush(Http11OutputBuffer.java:574)
+	at org.apache.coyote.http11.filters.ChunkedOutputFilter.flush(ChunkedOutputFilter.java:154)
+	at org.apache.coyote.http11.Http11OutputBuffer.flush(Http11OutputBuffer.java:216)
+	at org.apache.coyote.http11.Http11Processor.flush(Http11Processor.java:1283)
+	at org.apache.coyote.AbstractProcessor.action(AbstractProcessor.java:408)
+	at org.apache.coyote.Response.action(Response.java:201)
+	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:298)
+	... 24 common frames omitted
+2026-03-23 21:34:24 ERROR Servlet.service() for servlet [dispatcherServlet] threw exception
+java.io.IOException: 你的主机中的软件中止了一个已建立的连接。
+	at java.base/sun.nio.ch.SocketDispatcher.write0(Native Method)
+	at java.base/sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:54)
+	at java.base/sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:137)
+	at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:102)
+	at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:58)
+	at java.base/sun.nio.ch.SocketChannelImpl.implWrite(SocketChannelImpl.java:566)
+	at java.base/sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:618)
+	at org.apache.tomcat.util.net.NioChannel.write(NioChannel.java:129)
+	at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.doWrite(NioEndpoint.java:1414)
+	at org.apache.tomcat.util.net.SocketWrapperBase.doWrite(SocketWrapperBase.java:748)
+	at org.apache.tomcat.util.net.SocketWrapperBase.flushBlocking(SocketWrapperBase.java:714)
+	at org.apache.tomcat.util.net.SocketWrapperBase.flush(SocketWrapperBase.java:699)
+	at org.apache.coyote.http11.Http11OutputBuffer$SocketOutputBuffer.flush(Http11OutputBuffer.java:574)
+	at org.apache.coyote.http11.filters.ChunkedOutputFilter.flush(ChunkedOutputFilter.java:154)
+	at org.apache.coyote.http11.Http11OutputBuffer.flush(Http11OutputBuffer.java:216)
+	at org.apache.coyote.http11.Http11Processor.flush(Http11Processor.java:1283)
+	at org.apache.coyote.AbstractProcessor.action(AbstractProcessor.java:408)
+	at org.apache.coyote.Response.action(Response.java:201)
+	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:298)
+	at org.apache.catalina.connector.OutputBuffer.flush(OutputBuffer.java:264)
+	at org.apache.catalina.connector.CoyoteOutputStream.flush(CoyoteOutputStream.java:130)
+	at org.springframework.web.context.request.async.StandardServletAsyncWebRequest$LifecycleServletOutputStream.flush(StandardServletAsyncWebRequest.java:415)
+	at org.springframework.util.StreamUtils.copy(StreamUtils.java:137)
+	at org.springframework.http.converter.StringHttpMessageConverter.writeInternal(StringHttpMessageConverter.java:128)
+	at org.springframework.http.converter.StringHttpMessageConverter.writeInternal(StringHttpMessageConverter.java:44)
+	at org.springframework.http.converter.AbstractHttpMessageConverter.write(AbstractHttpMessageConverter.java:234)
+	at org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitterReturnValueHandler$DefaultSseEmitterHandler.sendInternal(ResponseBodyEmitterReturnValueHandler.java:315)
+	at org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitterReturnValueHandler$DefaultSseEmitterHandler.send(ResponseBodyEmitterReturnValueHandler.java:302)
+	at org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitter.sendInternal(ResponseBodyEmitter.java:256)
+	at org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitter.send(ResponseBodyEmitter.java:243)
+	at org.springframework.web.servlet.mvc.method.annotation.SseEmitter.send(SseEmitter.java:129)
+	at org.springframework.web.servlet.mvc.method.annotation.SseEmitter.send(SseEmitter.java:112)
+	at org.springframework.web.servlet.mvc.method.annotation.SseEmitter.send(SseEmitter.java:93)
+	at com.renjie.jesseaiagent.agent.BaseAgent.lambda$runStream$0(BaseAgent.java:130)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run$$$capture(CompletableFuture.java:1804)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec$$$capture(ForkJoinTask.java:507)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1489)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:2071)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2033)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+2026-03-23 21:34:24 INFO  SSE connection completed
+2026-03-23 21:34:24 ERROR Servlet.service() for servlet [dispatcherServlet] in context with path [/api] threw exception
+java.io.IOException: 你的主机中的软件中止了一个已建立的连接。
+	at java.base/sun.nio.ch.SocketDispatcher.write0(Native Method)
+	at java.base/sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:54)
+	at java.base/sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:137)
+	at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:102)
+	at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:58)
+	at java.base/sun.nio.ch.SocketChannelImpl.implWrite(SocketChannelImpl.java:566)
+	at java.base/sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:618)
+	at org.apache.tomcat.util.net.NioChannel.write(NioChannel.java:129)
+	at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.doWrite(NioEndpoint.java:1414)
+	at org.apache.tomcat.util.net.SocketWrapperBase.doWrite(SocketWrapperBase.java:748)
+	at org.apache.tomcat.util.net.SocketWrapperBase.flushBlocking(SocketWrapperBase.java:714)
+	at org.apache.tomcat.util.net.SocketWrapperBase.flush(SocketWrapperBase.java:699)
+	at org.apache.coyote.http11.Http11OutputBuffer$SocketOutputBuffer.flush(Http11OutputBuffer.java:574)
+	at org.apache.coyote.http11.filters.ChunkedOutputFilter.flush(ChunkedOutputFilter.java:154)
+	at org.apache.coyote.http11.Http11OutputBuffer.flush(Http11OutputBuffer.java:216)
+	at org.apache.coyote.http11.Http11Processor.flush(Http11Processor.java:1283)
+	at org.apache.coyote.AbstractProcessor.action(AbstractProcessor.java:408)
+	at org.apache.coyote.Response.action(Response.java:201)
+	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:298)
+	at org.apache.catalina.connector.OutputBuffer.flush(OutputBuffer.java:264)
+	at org.apache.catalina.connector.CoyoteOutputStream.flush(CoyoteOutputStream.java:130)
+	at org.springframework.web.context.request.async.StandardServletAsyncWebRequest$LifecycleServletOutputStream.flush(StandardServletAsyncWebRequest.java:415)
+	at org.springframework.util.StreamUtils.copy(StreamUtils.java:137)
+	at org.springframework.http.converter.StringHttpMessageConverter.writeInternal(StringHttpMessageConverter.java:128)
+	at org.springframework.http.converter.StringHttpMessageConverter.writeInternal(StringHttpMessageConverter.java:44)
+	at org.springframework.http.converter.AbstractHttpMessageConverter.write(AbstractHttpMessageConverter.java:234)
+	at org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitterReturnValueHandler$DefaultSseEmitterHandler.sendInternal(ResponseBodyEmitterReturnValueHandler.java:315)
+	at org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitterReturnValueHandler$DefaultSseEmitterHandler.send(ResponseBodyEmitterReturnValueHandler.java:302)
+	at org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitter.sendInternal(ResponseBodyEmitter.java:256)
+	at org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitter.send(ResponseBodyEmitter.java:243)
+	at org.springframework.web.servlet.mvc.method.annotation.SseEmitter.send(SseEmitter.java:129)
+	at org.springframework.web.servlet.mvc.method.annotation.SseEmitter.send(SseEmitter.java:112)
+	at org.springframework.web.servlet.mvc.method.annotation.SseEmitter.send(SseEmitter.java:93)
+	at com.renjie.jesseaiagent.agent.BaseAgent.lambda$runStream$0(BaseAgent.java:130)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run$$$capture(CompletableFuture.java:1804)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec$$$capture(ForkJoinTask.java:507)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1489)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:2071)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:2033)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:187)
+2026-03-23 21:37:50 INFO  AI Request: 你好，我是jesse
+2026-03-23 21:37:57 INFO  AI Response: 你好，Jesse！我是专注于恋爱心理学领域的专家。很高兴你找到了我这里，无论你是单身、正处于恋爱关系中还是已婚状态，如果你遇到了任何关于情感方面的困扰或难题，都可以向我倾诉。今天你想聊些什么呢？比如你在社交圈拓展方面是否遇到了障碍？或者在与伴侣沟通时遇到了什么问题？亦或是婚姻生活中有什么让你感到困惑的地方？请告诉我更多细节吧，这样我才能更好地为你提供帮助。
+2026-03-23 22:09:19 INFO  AI Request: 你好，我是jesse
+2026-03-23 22:09:29 INFO  AI Response: 你好，Jesse！很高兴认识你。我是专注于恋爱心理学领域的专家，在这里你可以和我分享你在感情道路上遇到的各种困惑与挑战。无论是单身、正在恋爱还是已经步入婚姻，都可以向我倾诉你的难题。下面我想先了解一下你目前的感情状态是怎样的呢？如果你愿意的话，可以具体描述一下最近让你感到困扰的事情是什么，比如遇到了什么问题，对方的反应如何，以及你自己内心的真实想法。这样我能更好地理解你的处境，并给出更合适的建议。
+2026-03-23 22:16:05 INFO  AI Request: 你好我是jesse
+2026-03-23 22:16:18 INFO  AI Response: 你好，Jesse！很高兴遇见你。我是专注于恋爱心理领域的专家，在这里你可以分享你的故事、倾诉你的困扰。无论是单身、恋爱还是已婚阶段遇到的问题，我都很乐意为你提供帮助和支持。
+
+- 如果你正处于单身状态，或许你在拓展社交圈或追求心仪对象时遇到了一些挑战？
+- 对于正在恋爱中的朋友来说，可能偶尔会因为沟通不畅或是生活习惯上的差异而产生小摩擦吧？
+- 而对于已经步入婚姻殿堂的伴侣而言，如何平衡家庭责任以及处理好与双方家人的关系可能是需要面对的重要课题之一。
+
+请告诉我你现在处于哪个阶段，并描述一下具体的情况（比如事情经过、对方的态度以及你的感受等），这样我可以更好地理解并为你提供个性化的建议哦~
+2026-03-23 22:30:56 INFO  AI Request: 你好，我是jesse
+2026-03-23 22:31:35 INFO  Executing step 1/20
+2026-03-23 22:31:35 INFO  AI Request: Based on user needs, proactively select the most appropriate tool or combination of tools.
+For complex tasks, you can break down the problem and use different tools step by step to solve it.
+After using each tool, clearly explain the execution results and suggest the next steps.
+If you want to stop the interaction at any point, use the `terminate` tool/function call.
+
+2026-03-23 22:31:38 INFO  AI Response: 
+2026-03-23 22:31:38 INFO  yuManus的思考: 
+2026-03-23 22:31:38 INFO  yuManus选择了 1 个工具来使用
+2026-03-23 22:31:38 INFO  工具名称：searchWeb，参数：{"query": "广州增城美食 好去处"}
+2026-03-23 22:31:44 INFO  工具 searchWeb 完成了它的任务！结果: "{\"position\":1,\"title\":\"广州增城旅游必打卡景点和美食推荐\",\"link\":\"https://mbd.baidu.com/newspage/data/dtlandingsuper?nid=dt_5206323408310058641\",\"displayed_link\":\"步履生春\",\"snippet\":\"水晶粉葛:增城的特色美食,口感爽滑。 西山乌榄:增城的特产,味道独特。 增城丝苗鸡饭:增城的传统美食,鸡肉鲜嫩,米饭香甜。 增城荔枝:增城的特产,味道鲜美,品种多样。 派潭凉粉草:增城的特色小吃,清凉解暑。 东江鱼包:增城的水产美食,鱼肉鲜美。 增江靓河鲜:增城的河鲜美食,鱼肉鲜嫩。 黄塘头莱:增城的特色蔬菜,口感清脆\",\"snippet_highlighted_words\":[\"水晶粉葛:增城的特色美食\",\"西山乌榄\"],\"date\":\"2025年1月16日\"},{\"position\":2,\"title\":\"广州美食攻略|家庭游必吃增城农家菜合集\",\"link\":\"https://m.ctrip.com/webapp/you/tripshoot/paipai/detail/detail?articleId=227491391&isHideNavBar=YES&seo=0&twojumpwakeup=0&allianceId=1049189&sid=19855591\",\"displayed_link\":\"携程旅行\",\"snippet\":\"增城迟菜心 增城特产 脆嫩无涩味 清炒就超甜 解腻必备 民宿厨房能自己做 可自带食材 山坑螺 山间野味 肉质紧实弹牙 鲜辣入味 KTV 局配它超嗨 竹筒饭 竹筒蒸糯米裹腊肉香 撕开瞬间竹香扑鼻 全家都爱 酿豆腐 咬开爆肉汁 配民宿火锅套餐 鲜到跺脚 住进美食发生地 ...\",\"snippet_highlighted_words\":[\"增城\",\"美食\"],\"date\":\"2025年11月14日\",\"is_baidu_guaranteed\":true},{\"position\":3,\"title\":\"广州增城本地人推荐必吃的9家苍蝇馆子必吃榜-大众点评\",\"link\":\"https://m.dianping.com/ugcdetail/381127391?sceneType=0&bizType=29&msource=baiduappugc\",\"displayed_link\":\"大众点评网\",\"snippet\":\"9. 霖记小食📍增城区莲园西路39号,💰21元左右/人狮子头入口即化,醉卤水猪俐有上海特色,陈皮鱼蓉粥鲜上加鲜 ,荠菜云吞汤底讲究 。 #2025毕业旅行城市Top #我的必吃榜美食清单 #创作者赏金计划 #我给白鹿推荐吃喝玩乐好去处 #0元玩转这座城 #发现景点周边必吃榜餐厅 #毕业旅行就冲这座城市 #跟着必吃...\",\"snippet_highlighted_words\":[\"9. 霖记小食📍增城区莲园西路39号\"]},{\"position\":4,\"title\":\"增城旅游必去十大景点,增城十大绝美景点和地道美食,推荐收藏\",\"link\":\"https://baijiahao.baidu.com/s?id=1835427073729582235&wfr=spider&for=pc\",\"displayed_link\":\"生活达人小九呐\",\"snippet\":\"增城，这座广州东部的生态明珠，藏着比白水寨更惊艳的自然奇观，比顺德更地道的岭南风味。从亚洲最宽的瀑布白水仙瀑，到千年古榄树环绕的湖心岛；从电影小镇的复古霓虹，到正果老街的云吞飘香。本文小九带您深度解锁白水寨、1978电影小镇等十大核心景区，细数正果云吞、兰溪濑粉等地道美食，结合崔与之、湛若水等名人典故...\",\"snippet_highlighted_words\":[\"增城\",\"广州\",\"美食\"],\"date\":\"2025年6月20日\",\"thumbnail\":\"https://t7.baidu.com/it/u=3146619040,1148779590&fm=3035&app=3035&size=re3,2&q=75&n=0&g=4n&f=JPEG&fmt=auto&maxorilen2heic=2000000?s=9938F6B3485E85CE52A5A449030000D3\"},{\"position\":5,\"title\":\"增城非遗粤菜,周末觅食好去处 - 大众点评吃喝玩乐精选\",\"link\":\"https://www.dianping.com/discovery/2218444509\",\"displayed_link\":\"大众点评网\",\"snippet\":\"最让人惊喜的是传统煲仔饭,金黄焦脆的锅巴配上腊味,香气扑鼻,让人忍不住连吃两碗。 人均150元左右就能品尝到这么地道的非遗粤菜,性价比很高。建议提前订位,周末饭点经常爆满。吃完还可以在增城广场散步消食,是个不错的周末安排! #广州非遗美食#增城必吃#粤菜馆推荐#周末去哪儿#广府文化...\",\"snippet_highlighted_words\":[\"增城\",\"广州\",\"美食\"],\"date\":\"2025年5月30日\",\"thumbnail\":\"https://t7.baidu.com/it/u=2836108772,2512859895&fm=3031&app=3031&size=re3,2&q=75&n=0&g=3n&f=JPEG&fmt=auto&maxorilen2heic=2000000?s=51A8B95546205D05F4B5AC4803003031\"}"
+2026-03-23 22:31:44 INFO  Executing step 2/20
+2026-03-23 22:31:44 INFO  AI Request: Based on user needs, proactively select the most appropriate tool or combination of tools.
+For complex tasks, you can break down the problem and use different tools step by step to solve it.
+After using each tool, clearly explain the execution results and suggest the next steps.
+If you want to stop the interaction at any point, use the `terminate` tool/function call.
+
+2026-03-23 22:32:00 INFO  AI Response: 根据您的需求，我为您找到了一些广州增城美食的好去处。以下是几个推荐的地方：
+
+1. **水晶粉葛、西山乌榄**：作为增城的特色美食，口感爽滑且味道独特。
+2. **增城丝苗鸡饭**：这是增城的传统美食之一，鸡肉鲜嫩，米饭香甜。
+3. **派潭凉粉草**：一种当地的小吃，非常适合夏天食用，可以清凉解暑。
+4. **东江鱼包**：增城的水产美食，以其鲜美的鱼肉著称。
+5. **霖记小食**：位于增城区莲园西路39号，提供狮子头等美味佳肴，价格约为每人21元人民币。
+
+此外还有提到像正果云吞、兰溪濑粉等地道美食，以及传统煲仔饭等非遗粤菜，这些都是非常值得一试的美食。
+
+如果您对上述任一地点感兴趣，我可以为您提供更详细的信息或帮助您查找具体位置和营业时间。您想要了解更多信息吗？
+2026-03-23 22:32:00 INFO  yuManus的思考: 根据您的需求，我为您找到了一些广州增城美食的好去处。以下是几个推荐的地方：
+
+1. **水晶粉葛、西山乌榄**：作为增城的特色美食，口感爽滑且味道独特。
+2. **增城丝苗鸡饭**：这是增城的传统美食之一，鸡肉鲜嫩，米饭香甜。
+3. **派潭凉粉草**：一种当地的小吃，非常适合夏天食用，可以清凉解暑。
+4. **东江鱼包**：增城的水产美食，以其鲜美的鱼肉著称。
+5. **霖记小食**：位于增城区莲园西路39号，提供狮子头等美味佳肴，价格约为每人21元人民币。
+
+此外还有提到像正果云吞、兰溪濑粉等地道美食，以及传统煲仔饭等非遗粤菜，这些都是非常值得一试的美食。
+
+如果您对上述任一地点感兴趣，我可以为您提供更详细的信息或帮助您查找具体位置和营业时间。您想要了解更多信息吗？
+2026-03-23 22:32:00 INFO  yuManus选择了 1 个工具来使用
+2026-03-23 22:32:00 INFO  工具名称：doTerminate，参数：{}
+2026-03-23 22:32:00 INFO  工具 doTerminate 完成了它的任务！结果: "任务结束"
+2026-03-23 22:32:00 INFO  SSE connection completed

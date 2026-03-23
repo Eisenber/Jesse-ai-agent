@@ -1,5 +1,12 @@
 <template>
   <div class="chat-page">
+    <div class="lain-bg" aria-hidden="true">
+      <img class="lain-stamp c1" :src="lain1" alt="" />
+      <img class="lain-stamp c2" :src="lain2" alt="" />
+      <img class="lain-stamp c3" :src="lain3" alt="" />
+      <img class="lain-stamp c4" :src="lain4" alt="" />
+    </div>
+
     <div class="chat-topbar">
       <div class="chat-topbar-left">
         <div class="chat-title">{{ title }}</div>
@@ -42,6 +49,10 @@
 
 <script setup>
 import { nextTick, ref, watch } from 'vue'
+import lain1 from '../assets/lain1.png'
+import lain2 from '../assets/lain2.png'
+import lain3 from '../assets/lain3.png'
+import lain4 from '../assets/lain4.png'
 
 const props = defineProps({
   title: { type: String, default: '' },
@@ -88,6 +99,68 @@ watch(
   box-sizing: border-box;
   background: transparent;
   color: var(--text);
+  position: relative;
+}
+
+.chat-topbar,
+.chat-body,
+.chat-inputbar {
+  position: relative;
+  z-index: 1;
+}
+
+.lain-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: visible;
+}
+
+.lain-stamp {
+  position: absolute;
+  image-rendering: pixelated;
+  opacity: var(--lain-o, 0.20);
+  mix-blend-mode: lighten;
+  filter: saturate(0.75) contrast(1.85) brightness(1.08) hue-rotate(160deg);
+  transform: translateZ(0);
+  animation: lainFlicker 4.5s steps(2) infinite;
+}
+
+.c1 {
+  left: 2%;
+  top: 80px;
+  width: clamp(220px, 26vw, 330px);
+  --lain-o: 0.30;
+  animation-delay: -0.3s;
+}
+
+.c2 {
+  right: 2%;
+  top: 150px;
+  width: clamp(220px, 24vw, 330px);
+  --lain-o: 0.14;
+  animation-delay: -1.2s;
+}
+
+.c3 {
+  left: 50%;
+  bottom: 20px;
+  width: clamp(280px, 46vw, 640px);
+  transform: translateX(-50%);
+  --lain-o: 0.22;
+  animation-delay: -0.9s;
+}
+
+.c4 {
+  left: 52%;
+  top: 210px;
+  right: auto;
+  bottom: auto;
+  width: clamp(200px, 24vw, 360px);
+  transform: translateX(-50%);
+  --lain-o: 0.10;
+  animation-delay: -2.2s;
 }
 
 .chat-topbar {
@@ -306,6 +379,25 @@ watch(
   box-shadow: none;
   color: var(--muted-2);
   text-shadow: none;
+}
+
+@keyframes lainFlicker {
+  0% {
+    filter: saturate(0.75) contrast(1.85) brightness(1.08) hue-rotate(160deg);
+    transform: translateZ(0) translate(0px, 0px);
+  }
+  45% {
+    filter: saturate(0.98) contrast(2.25) brightness(1.12) hue-rotate(160deg);
+    transform: translateZ(0) translate(0.8px, -0.5px);
+  }
+  55% {
+    filter: saturate(0.64) contrast(1.7) brightness(1.02) hue-rotate(160deg);
+    transform: translateZ(0) translate(-0.5px, 0.4px);
+  }
+  100% {
+    filter: saturate(0.75) contrast(1.85) brightness(1.08) hue-rotate(160deg);
+    transform: translateZ(0) translate(0px, 0px);
+  }
 }
 </style>
 

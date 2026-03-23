@@ -1,5 +1,13 @@
 <template>
   <div class="home">
+    <div class="lain-bg" aria-hidden="true">
+      <img class="lain-stamp s1" :src="lain1" alt="" />
+      <img class="lain-stamp s2" :src="lain2" alt="" />
+      <img class="lain-stamp s3" :src="lain3" alt="" />
+      <img class="lain-stamp s4" :src="lain4" alt="" />
+    </div>
+
+    <div class="home-content">
     <header class="home-header">
       <h1 class="home-title">AI 应用选择</h1>
       <p class="home-subtitle">选择一个应用进入聊天室</p>
@@ -16,8 +24,16 @@
         <div class="card-desc">SSE 实时聊天（调用 doChatWithManus）</div>
       </router-link>
     </div>
+    </div>
   </div>
 </template>
+
+<script setup>
+import lain1 from '../assets/lain1.png'
+import lain2 from '../assets/lain2.png'
+import lain3 from '../assets/lain3.png'
+import lain4 from '../assets/lain4.png'
+</script>
 
 <style scoped>
 .home {
@@ -28,6 +44,67 @@
   box-sizing: border-box;
   background: transparent;
   color: var(--text);
+  position: relative;
+}
+
+.home-content {
+  position: relative;
+  z-index: 1;
+}
+
+.lain-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: visible;
+}
+
+.lain-stamp {
+  position: absolute;
+  image-rendering: pixelated;
+  opacity: var(--lain-o, 0.22);
+  mix-blend-mode: lighten;
+  filter: saturate(0.75) contrast(1.8) brightness(1.08) hue-rotate(160deg);
+  transform: translateZ(0);
+  animation: lainFlicker 4.5s steps(2) infinite;
+}
+
+.s1 {
+  left: 6%;
+  top: 110px;
+  width: clamp(220px, 26vw, 360px);
+  --lain-o: 0.30;
+  animation-delay: -0.2s;
+}
+
+.s2 {
+  right: 6%;
+  top: 210px;
+  width: clamp(220px, 26vw, 360px);
+  --lain-o: 0.16;
+  animation-delay: -1.1s;
+}
+
+.s3 {
+  left: 50%;
+  top: auto;
+  bottom: 30px;
+  transform: translateX(-50%);
+  width: clamp(260px, 34vw, 520px);
+  --lain-o: 0.22;
+  animation-delay: -0.7s;
+}
+
+.s4 {
+  left: 52%;
+  right: auto;
+  top: 260px;
+  bottom: auto;
+  width: clamp(180px, 22vw, 320px);
+  --lain-o: 0.10;
+  transform: translateX(-50%);
+  animation-delay: -2.0s;
 }
 
 .home-header {
@@ -106,6 +183,25 @@
 .card-desc {
   color: var(--muted);
   line-height: 1.35;
+}
+
+@keyframes lainFlicker {
+  0% {
+    filter: saturate(0.75) contrast(1.8) brightness(1.08) hue-rotate(160deg);
+    transform: translateZ(0) translate(0px, 0px);
+  }
+  45% {
+    filter: saturate(0.95) contrast(2.2) brightness(1.12) hue-rotate(160deg);
+    transform: translateZ(0) translate(0.6px, -0.4px);
+  }
+  55% {
+    filter: saturate(0.65) contrast(1.7) brightness(1.02) hue-rotate(160deg);
+    transform: translateZ(0) translate(-0.4px, 0.3px);
+  }
+  100% {
+    filter: saturate(0.75) contrast(1.8) brightness(1.08) hue-rotate(160deg);
+    transform: translateZ(0) translate(0px, 0px);
+  }
 }
 </style>
 
