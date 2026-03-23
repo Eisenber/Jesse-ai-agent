@@ -1,0 +1,15 @@
+spring:
+  ai:
+    mcp:
+      async:
+        request-timeout: 300000  # \u6BEB\u79D2\uFF0C\u5373 300 \u79D2\uFF085 \u5206\u949F\uFF09
+      server:
+        name: jesse-image-search-mcp-server
+        version: 0.0.1
+        type: SYNC
+        # stdio
+        stdio: true
+  # stdio
+  main:
+    web-application-type: none
+    banner-mode: off
