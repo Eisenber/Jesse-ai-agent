@@ -1,5 +1,6 @@
 ### custom ###
 application-local.yml
+application-prod.yml
 tmp
 
 HELP.md
@@ -35,3 +36,4 @@ build/
 
 ### VS Code ###
 .vscode/
+/src/main/resources/application-prod.yml

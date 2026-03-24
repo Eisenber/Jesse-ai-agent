@@ -7794,3 +7794,30 @@ If you want to stop the interaction at any point, use the `terminate` tool/funct
 2026-03-23 22:32:00 INFO  工具名称：doTerminate，参数：{}
 2026-03-23 22:32:00 INFO  工具 doTerminate 完成了它的任务！结果: "任务结束"
 2026-03-23 22:32:00 INFO  SSE connection completed
+2026-03-23 22:39:47 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@13fe158e (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 22:40:08 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@309ad777 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 22:40:40 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@76b70cd7 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 22:40:45 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@28d97b9 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 22:40:50 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@5ef6de0f (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 22:40:55 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@37b19bbf (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 22:41:04 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@5c1e0e33 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 22:41:14 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@79b0d0b3 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 22:41:22 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@7365a019 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 22:42:21 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@43ef658a (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 22:42:29 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@51d95de3 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 22:42:35 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@9a8bf23 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 22:42:39 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@302715b0 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 22:42:54 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@4c72b34a (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 22:42:56 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@78069661 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 22:42:58 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@70048644 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 22:43:15 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@29b593ed (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 22:43:32 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@1f3be640 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 22:43:39 WARN  HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@4ef6bd28 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-23 23:51:42 WARN  [HttpClientBeanHolder] Start destroying common HttpClient
+2026-03-23 23:51:42 WARN  [ThreadPoolManager] Start destroying ThreadPool
+2026-03-23 23:51:42 WARN  [ThreadPoolManager] Destruction of the end
+2026-03-23 23:51:42 WARN  [HttpClientBeanHolder] Destruction of the end
+2026-03-23 23:51:42 INFO  Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-23 23:51:42 INFO  Graceful shutdown complete
+2026-03-23 23:51:42 INFO  HikariPool-1 - Shutdown initiated...
+2026-03-23 23:51:42 INFO  HikariPool-1 - Shutdown completed.
