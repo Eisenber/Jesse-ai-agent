@@ -11,7 +11,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
 import org.springframework.ai.chat.client.advisor.QuestionAnswerAdvisor;
+import org.springframework.ai.chat.client.advisor.api.Advisor;
 import org.springframework.ai.chat.memory.ChatMemory;
+import org.springframework.ai.chat.memory.InMemoryChatMemory;
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.chat.model.ChatResponse;
 import org.springframework.ai.tool.ToolCallback;
@@ -43,15 +45,15 @@ public class LoveApp {
 
     /**
      * 初始化chatClient
-     * @param chatModel
+     * @param dashscopeChatModel
      */
-    public LoveApp(@Qualifier("openAiChatModel") ChatModel chatModel) {
+    public LoveApp(ChatModel dashscopeChatModel) {
         // 初始化基于文件的对话记忆
         String fileDir = System.getProperty("user.dir") + "/tmp/chat-memory";
         ChatMemory chatMemory = new FileBasedChatMemory(fileDir);
         // 初始化基于内存的对话记忆
         //ChatMemory chatMemory = new InMemoryChatMemory();
-        chatClient = ChatClient.builder(chatModel)
+        chatClient = ChatClient.builder(dashscopeChatModel)
                 .defaultSystem(SYSTEM_PROMPT)
                 .defaultAdvisors(
                         new MessageChatMemoryAdvisor(chatMemory),
@@ -63,7 +65,7 @@ public class LoveApp {
                 .build();
     }
 /**
- * 使用硅基流动(OpenAI兼容)的ChatClient进行对话。支持多轮对话。
+ * 使用DashScope的ChatClient进行对话。支持多轮对话。
  *
  * @param message 用户输入的消息
  * @param chatId  对话的ID
@@ -123,12 +125,10 @@ public class LoveApp {
     //AI恋爱大师基于rag知识库回答
     @Resource(name = "loveAppVectorStore")
     private VectorStore vectorStore;
-    // DashScope 云知识库已失效，暂时禁用
-    //@Resource
-    //private Advisor loveAppRagCloudAdvisor;
-    // pgvector 数据库已失效，暂时禁用
-    //@Resource
-    //private VectorStore pgVectorVectorStore;
+    @Resource
+    private Advisor loveAppRagCloudAdvisor;
+    @Resource
+    private VectorStore pgVectorVectorStore;
     @Resource
     private QueryRewriter queryRewriter;
     public String doChatWithRag(String message, String chatId) {
