@@ -40,11 +40,16 @@ public class WebSearchTool {
             // 提取 organic_results 部分
             JSONArray organicResults = jsonObject.getJSONArray("organic_results");
             List<Object> objects = organicResults.subList(0, 5);
-            // 拼接搜索结果为字符串
+            // 清洗结果：移除所有 URL，只保留文字信息 + 来源标注
             String result = objects.stream().map(obj -> {
-                JSONObject tmpJSONObject = (JSONObject) obj;
-                return tmpJSONObject.toString();
-            }).collect(Collectors.joining(","));
+                JSONObject item = (JSONObject) obj;
+                String title = item.getStr("title", "无标题");
+                String snippet = item.getStr("snippet", "");
+                String source = item.getStr("displayed_link", item.getStr("source", "未知来源"));
+                // 去除 snippet 中可能包含的 URL
+                String cleanSnippet = snippet.replaceAll("https?://[^\\s]+", "[链接已移除]");
+                return String.format("【%s】%s (来源：%s)", title, cleanSnippet, source);
+            }).collect(Collectors.joining("\n\n"));
             return result;
         } catch (Exception e) {
             return "Error searching Baidu: " + e.getMessage();

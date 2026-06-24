@@ -1,135 +1,150 @@
 package com.renjie.jesseaiagent.agent;
 
-import cn.hutool.core.collection.CollUtil;
-import com.alibaba.cloud.ai.dashscope.chat.DashScopeChatOptions;
 import com.renjie.jesseaiagent.agent.model.AgentState;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.messages.AssistantMessage;
 import org.springframework.ai.chat.messages.Message;
+import org.springframework.ai.chat.messages.SystemMessage;
 import org.springframework.ai.chat.messages.ToolResponseMessage;
 import org.springframework.ai.chat.messages.UserMessage;
+import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.chat.model.ChatResponse;
-import org.springframework.ai.chat.prompt.ChatOptions;
 import org.springframework.ai.chat.prompt.Prompt;
-import org.springframework.ai.model.tool.ToolCallingManager;
-import org.springframework.ai.model.tool.ToolExecutionResult;
+import org.springframework.ai.model.tool.ToolCallingChatOptions;
 import org.springframework.ai.tool.ToolCallback;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
- * 处理工具调用的基础代理类，具体实现了 think 和 act 方法，可以用作创建实例的父类  
- */  
+ * ReAct 工具调用代理：think（AI 决定调用哪些工具）→ act（手动执行工具）
+ * internalToolExecutionEnabled=false 防止框架自动消费工具调用请求
+ */
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Slf4j
 public class ToolCallAgent extends ReActAgent {
-  
-    // 可用的工具  
+
     private final ToolCallback[] availableTools;
-  
-    // 保存了工具调用信息的响应  
+    private final ChatModel chatModel;
     private ChatResponse toolCallChatResponse;
-  
-    // 工具调用管理者  
-    private final ToolCallingManager toolCallingManager;
-  
-    // 禁用内置的工具调用机制，自己维护上下文  
-    private final ChatOptions chatOptions;
-  
-    public ToolCallAgent(ToolCallback[] availableTools) {  
-        super();  
-        this.availableTools = availableTools;  
-        this.toolCallingManager = ToolCallingManager.builder().build();  
-        // 禁用 Spring AI 内置的工具调用机制，自己维护选项和消息上下文  
-        this.chatOptions = DashScopeChatOptions.builder()
-                .withProxyToolCalls(true)  
-                .build();  
+    private String lastThoughtText = "";
+
+    public ToolCallAgent(ToolCallback[] availableTools, ChatModel chatModel) {
+        super();
+        this.availableTools = availableTools;
+        this.chatModel = chatModel;
     }
 
-    /**
-     * 处理当前状态并决定下一步行动
-     *
-     * @return 是否需要执行行动
-     */
     @Override
     public boolean think() {
-        if (getNextStepPrompt() != null && !getNextStepPrompt().isEmpty()) {
-            UserMessage userMessage = new UserMessage(getNextStepPrompt());
-            getMessageList().add(userMessage);
-        }
-        List<Message> messageList = getMessageList();
-        Prompt prompt = new Prompt(messageList, chatOptions);
         try {
-            // 获取带工具选项的响应
-            ChatResponse chatResponse = getChatClient().prompt(prompt)
-                    .system(getSystemPrompt())
-                    .tools(availableTools)
-                    .call()
-                    .chatResponse();
-            // 记录响应，用于 Act
+            List<Message> fullMessages = new ArrayList<>();
+            if (getSystemPrompt() != null && !getSystemPrompt().isEmpty()) {
+                fullMessages.add(new SystemMessage(getSystemPrompt()));
+            }
+            fullMessages.addAll(getMessageList());
+            // nextStepPrompt 只加到本次请求，不持久化到历史（避免重复累积）
+            if (getNextStepPrompt() != null && !getNextStepPrompt().isEmpty()) {
+                fullMessages.add(new UserMessage(getNextStepPrompt()));
+            }
+
+            // 关键：internalToolExecutionEnabled(false) 让工具调用请求原样返回
+            Prompt prompt = new Prompt(fullMessages,
+                    ToolCallingChatOptions.builder()
+                            .internalToolExecutionEnabled(false)
+                            .toolCallbacks(List.of(availableTools))
+                            .build());
+
+            ChatResponse chatResponse = chatModel.call(prompt);
             this.toolCallChatResponse = chatResponse;
             AssistantMessage assistantMessage = chatResponse.getResult().getOutput();
-            // 输出提示信息
-            String result = assistantMessage.getText();
+            String text = assistantMessage.getText();
             List<AssistantMessage.ToolCall> toolCallList = assistantMessage.getToolCalls();
-            log.info(getName() + "的思考: " + result);
-            log.info(getName() + "选择了 " + toolCallList.size() + " 个工具来使用");
-            String toolCallInfo = toolCallList.stream()
-                    .map(toolCall -> String.format("工具名称：%s，参数：%s",
-                            toolCall.name(),
-                            toolCall.arguments())
-                    )
-                    .collect(Collectors.joining("\n"));
-            log.info(toolCallInfo);
-            if (toolCallList.isEmpty()) {
-                // 只有不调用工具时，才记录助手消息
-                getMessageList().add(assistantMessage);
-                return false;
-            } else {
-                // 需要调用工具时，无需记录助手消息，因为调用工具时会自动记录
-                return true;
-            }
+
+            log.info(getName() + " 思考: {}", text);
+            this.lastThoughtText = assistantMessage.getText();
+            log.info(getName() + " 选择了 {} 个工具", toolCallList.size());
+            toolCallList.forEach(tc ->
+                    log.info("  → {}: {}", tc.name(), tc.arguments()));
+
+            getMessageList().add(assistantMessage);
+            return !toolCallList.isEmpty();
         } catch (Exception e) {
-            log.error(getName() + "的思考过程遇到了问题: " + e.getMessage());
-            getMessageList().add(
-                    new AssistantMessage("处理时遇到错误: " + e.getMessage()));
+            log.error(getName() + " 思考异常: {}", e.getMessage());
+            getMessageList().add(new AssistantMessage("思考异常: " + e.getMessage()));
             return false;
         }
     }
 
-
-    /**
-     * 执行工具调用并处理结果
-     *
-     * @return 执行结果
-     */
     @Override
     public String act() {
-        if (!toolCallChatResponse.hasToolCalls()) {
+        if (toolCallChatResponse == null || !toolCallChatResponse.hasToolCalls()) {
             return "没有工具调用";
         }
-        // 调用工具
-        Prompt prompt = new Prompt(getMessageList(), chatOptions);
-        ToolExecutionResult toolExecutionResult = toolCallingManager.executeToolCalls(prompt, toolCallChatResponse);
-        // 记录消息上下文，conversationHistory 已经包含了助手消息和工具调用返回的结果
-        setMessageList(toolExecutionResult.conversationHistory());// 当前工具调用的结果
-        ToolResponseMessage toolResponseMessage = (ToolResponseMessage) CollUtil.getLast(toolExecutionResult.conversationHistory());
-        String results = toolResponseMessage.getResponses().stream()
-                .map(response -> "工具 " + response.name() + " 完成了它的任务！结果: " + response.responseData())
-                .collect(Collectors.joining("\n"));
-        // 判断是否调用了终止工具
-        boolean terminateToolCalled = toolResponseMessage.getResponses().stream()
-                .anyMatch(response -> "doTerminate".equals(response.name()));
-        if (terminateToolCalled) {
-            setState(AgentState.FINISHED);
+        AssistantMessage assistantMessage = toolCallChatResponse.getResult().getOutput();
+        List<AssistantMessage.ToolCall> toolCalls = assistantMessage.getToolCalls();
+        if (toolCalls.isEmpty()) {
+            return "没有工具调用";
         }
-        log.info(results);
-        return results;
 
+        // 手动匹配工具名 → ToolCallback
+        var toolMap = Arrays.stream(availableTools)
+                .collect(Collectors.toMap(t -> t.getToolDefinition().name(), t -> t, (a, b) -> a));
+
+        List<ToolResponseMessage.ToolResponse> responses = new ArrayList<>();
+        for (AssistantMessage.ToolCall tc : toolCalls) {
+            try {
+                ToolCallback callback = toolMap.get(tc.name());
+                if (callback == null) {
+                    // 尝试忽略大小写
+                    callback = Arrays.stream(availableTools)
+                            .filter(t -> t.getToolDefinition().name().equalsIgnoreCase(tc.name()))
+                            .findFirst().orElse(null);
+                }
+                if (callback == null) {
+                    log.warn("未找到工具: {}", tc.name());
+                    responses.add(new ToolResponseMessage.ToolResponse(
+                            tc.id(), tc.name(), "错误: 未找到工具 " + tc.name()));
+                } else {
+                    String result = callback.call(tc.arguments());
+                    // 全局过滤：移除所有工具输出中的 URL 链接
+                    result = result.replaceAll("https?://[^\\s]+", "[链接已移除]");
+                    log.info("工具 {} 执行完成: {}", tc.name(), result);
+                    responses.add(new ToolResponseMessage.ToolResponse(tc.id(), tc.name(), result));
+                    if ("doTerminate".equals(callback.getToolDefinition().name())) {
+                        setState(AgentState.FINISHED);
+                    }
+                }
+            } catch (Exception e) {
+                log.error("工具 {} 执行失败: {}", tc.name(), e.getMessage());
+                responses.add(new ToolResponseMessage.ToolResponse(
+                        tc.id(), tc.name(), "错误: " + e.getMessage()));
+            }
+        }
+
+        ToolResponseMessage toolResponseMessage = new ToolResponseMessage(responses, Map.of());
+        getMessageList().add(toolResponseMessage);
+
+        return responses.stream()
+                .map(r -> "工具 " + r.name() + " → " + r.responseData())
+                .collect(Collectors.joining("\n"));
+    }
+
+    @Override
+    public String step() {
+        boolean shouldAct = think();
+        if (!shouldAct) {
+            return lastThoughtText != null && !lastThoughtText.isEmpty()
+                    ? lastThoughtText
+                    : "思考完成";
+        }
+        return act();
     }
 
 }

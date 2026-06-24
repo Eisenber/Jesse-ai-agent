@@ -25,8 +25,8 @@ public class AiController {
     @Resource
     private ToolCallback[] allTools;
 
-    @Resource
-    private ChatModel dashscopeChatModel;
+    @Resource(name = "openAiChatModel")
+    private ChatModel chatModel;
 
     /**
      * 同步调用AI
@@ -88,7 +88,7 @@ public class AiController {
      */
     @GetMapping("/manus/chat")
     public SseEmitter doChatWithManus(String message) {
-        YuManus yuManus = new YuManus(allTools, dashscopeChatModel);
+        YuManus yuManus = new YuManus(allTools, chatModel);
         return yuManus.runStream(message);
     }
 
