@@ -1,7 +1,6 @@
 package com.renjie.jesseaiagent.agent;
 
 import com.renjie.jesseaiagent.advisor.MyLoggerAdvisor;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.tool.ToolCallback;
@@ -10,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class YuManus extends ToolCallAgent {
 
-    public YuManus(ToolCallback[] allTools, @Qualifier("openAiChatModel") ChatModel chatModel) {
+    public YuManus(ToolCallback[] allTools, ChatModel chatModel) {
         super(allTools, chatModel);
         this.setName("yuManus");
         this.setSystemPrompt("""

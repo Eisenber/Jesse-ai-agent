@@ -31,14 +31,13 @@ public class PgVectorVectorStoreConfig {
     public VectorStore pgVectorVectorStore(JdbcTemplate jdbcTemplate, @Qualifier("openAiEmbeddingModel") EmbeddingModel embeddingModel) {
         VectorStore vectorStore = PgVectorStore.builder(jdbcTemplate, embeddingModel)
                 .dimensions(1024)                    // BAAI/bge-large-zh-v1.5 = 1024 维
-                .distanceType(COSINE_DISTANCE)       // Optional: defaults to COSINE_DISTANCE
-                .indexType(HNSW)                     // Optional: defaults to HNSW
-                .initializeSchema(true)              // Optional: defaults to false
-                .schemaName("public")                // Optional: defaults to "public"
-                .vectorTableName("vector_store")     // Optional: defaults to "vector_store"
-                .maxDocumentBatchSize(10000)         // Optional: defaults to 10000
+                .distanceType(COSINE_DISTANCE)
+                .indexType(HNSW)
+                .initializeSchema(true)
+                .schemaName("public")
+                .vectorTableName("vector_store")
+                .maxDocumentBatchSize(10000)
                 .build();
-        // 加载文档
         List<Document> documents = loveAppDocumentLoader.loadMarkdowns();
         vectorStore.add(documents);
         return vectorStore;

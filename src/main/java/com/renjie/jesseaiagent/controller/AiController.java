@@ -25,7 +25,7 @@ public class AiController {
     @Resource
     private ToolCallback[] allTools;
 
-    @Resource(name = "openAiChatModel")
+    @Resource
     private ChatModel chatModel;
 
     /**

@@ -43,7 +43,7 @@ public class LoveApp {
 
     /**
      * 初始化chatClient
-     * @param chatModel 硅基流动(OpenAI兼容) ChatModel
+     * @param chatModel
      */
     public LoveApp(@Qualifier("openAiChatModel") ChatModel chatModel) {
         // 初始化基于文件的对话记忆

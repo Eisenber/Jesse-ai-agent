@@ -49,12 +49,10 @@ public class ToolCallAgent extends ReActAgent {
                 fullMessages.add(new SystemMessage(getSystemPrompt()));
             }
             fullMessages.addAll(getMessageList());
-            // nextStepPrompt 只加到本次请求，不持久化到历史（避免重复累积）
             if (getNextStepPrompt() != null && !getNextStepPrompt().isEmpty()) {
                 fullMessages.add(new UserMessage(getNextStepPrompt()));
             }
 
-            // 关键：internalToolExecutionEnabled(false) 让工具调用请求原样返回
             Prompt prompt = new Prompt(fullMessages,
                     ToolCallingChatOptions.builder()
                             .internalToolExecutionEnabled(false)
@@ -67,8 +65,8 @@ public class ToolCallAgent extends ReActAgent {
             String text = assistantMessage.getText();
             List<AssistantMessage.ToolCall> toolCallList = assistantMessage.getToolCalls();
 
+            this.lastThoughtText = text;
             log.info(getName() + " 思考: {}", text);
-            this.lastThoughtText = assistantMessage.getText();
             log.info(getName() + " 选择了 {} 个工具", toolCallList.size());
             toolCallList.forEach(tc ->
                     log.info("  → {}: {}", tc.name(), tc.arguments()));
@@ -93,7 +91,6 @@ public class ToolCallAgent extends ReActAgent {
             return "没有工具调用";
         }
 
-        // 手动匹配工具名 → ToolCallback
         var toolMap = Arrays.stream(availableTools)
                 .collect(Collectors.toMap(t -> t.getToolDefinition().name(), t -> t, (a, b) -> a));
 
@@ -102,7 +99,6 @@ public class ToolCallAgent extends ReActAgent {
             try {
                 ToolCallback callback = toolMap.get(tc.name());
                 if (callback == null) {
-                    // 尝试忽略大小写
                     callback = Arrays.stream(availableTools)
                             .filter(t -> t.getToolDefinition().name().equalsIgnoreCase(tc.name()))
                             .findFirst().orElse(null);

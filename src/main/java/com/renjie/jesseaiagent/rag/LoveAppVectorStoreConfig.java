@@ -33,8 +33,6 @@ public class LoveAppVectorStoreConfig {
         // 加载文档
         List<Document> documentList = loveAppDocumentLoader.loadMarkdowns();
         log.info("RAG 文档加载完成，共 {} 个文档", documentList.size());
-        // 自主切分
-        //List<Document> splitDocuments = myTokenTextSplitter.splitCustomized(documents);
         // 关键词增强（可选，启动时较慢，失败自动回退原始文档）
         List<Document> enrichedDocuments = documentList;
         // 暂时跳过关键词增强以加速启动，需要时取消注释
@@ -44,7 +42,7 @@ public class LoveAppVectorStoreConfig {
         // } catch (Exception e) {
         //     log.warn("RAG 关键词增强失败: {}", e.getMessage());
         // }
-        // 逐条写入向量库（硅基流动 embedding 批量可能不兼容，逐条更稳定）
+        // 逐条写入向量库
         int successCount = 0;
         for (Document doc : enrichedDocuments) {
             try {
